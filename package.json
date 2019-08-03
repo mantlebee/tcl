@@ -1,8 +1,8 @@
 {
-  "name": "tcl",
+  "name": "@mantlebee/tcl",
   "version": "1.0.0",
   "description": "Typescript common library.",
-  "main": "index.js",
+  "main": "dist/tcl.js",
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack --watch",
