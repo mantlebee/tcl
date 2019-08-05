@@ -1,14 +1,15 @@
 {
   "name": "@mantlebee/tcl",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Typescript common library.",
-  "main": "dist/tcl.js",
+  "main": "dist/tcl.min.js",
   "scripts": {
-    "build": "webpack",
-    "build:watch": "webpack --watch",
-    "doc": "typedoc --mode file --out docs src",
+    "build": "webpack --config webpack.prod.js",
+    "build:watch": "webpack --watch --config webpack.dev.js",
     "test": "mocha --require ts-node/register test/**/*.spec.ts",
-    "test:watch": "mocha --require ts-node/register test/**/*.spec.ts --extension ts --watch src"
+    "test:watch": "mocha --require ts-node/register test/**/*.spec.ts --extension ts --watch src",
+    "doc": "typedoc --mode file --out docs src",
+    "prepublish": "npm run test && npm run build && npm run doc"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,6 @@
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-merge": "^4.2.1"
   }
 }
