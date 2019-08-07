@@ -2,11 +2,11 @@
   "name": "@mantlebee/tcl",
   "version": "1.0.5",
   "description": "Typescript common library.",
-  "main": "lib/index.js",
-  "types": "lib/index.t.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.t.ts",
   "files": [
     "docs/**/*",
-    "lib/**/*"
+    "dist/**/*"
   ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",

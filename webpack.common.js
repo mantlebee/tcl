@@ -1,10 +1,9 @@
 const path = require("path");
 
 // Configuration
-const entry = {
-  tcl: "./src/index.ts"
-};
-const outdir = "./lib";
+const entry = "./src/index.ts";
+const filename = "index.js";
+const outdir = "./dist";
 
 // Module
 module.exports = {
@@ -22,6 +21,7 @@ module.exports = {
     extensions: [".ts"]
   },
   output: {
+    filename,
     path: path.resolve(__dirname, outdir)
   }
 };
