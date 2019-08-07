@@ -10,8 +10,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "build:watch": "webpack --watch --config webpack.dev.js",
-    "test": "mocha --require ts-node/register test/**/*.spec.ts",
-    "test:watch": "mocha --require ts-node/register test/**/*.spec.ts --extension ts --watch src",
+    "test": "mocha --require ts-node/register tests/**/*.spec.ts",
+    "test:watch": "mocha --require ts-node/register tests/**/*.spec.ts --extension ts --watch src",
     "doc": "typedoc --mode file --out docs src",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
