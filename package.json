@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.t.ts",
   "files": [
+    "docs/**/*",
     "lib/**/*"
   ],
   "scripts": {
