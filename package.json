@@ -2,14 +2,24 @@
   "name": "@mantlebee/tcl",
   "version": "1.0.4",
   "description": "Typescript common library.",
-  "main": "dist/tcl.min.js",
+  "main": "lib/index.js",
+  "types": "lib/index.t.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "build:watch": "webpack --watch --config webpack.dev.js",
     "test": "mocha --require ts-node/register test/**/*.spec.ts",
     "test:watch": "mocha --require ts-node/register test/**/*.spec.ts --extension ts --watch src",
     "doc": "typedoc --mode file --out docs src",
-    "prepublish": "npm run test && npm run build && npm run doc"
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -30,8 +40,11 @@
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "mocha": "^6.2.0",
+    "prettier": "^1.18.2",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.15.0",
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",

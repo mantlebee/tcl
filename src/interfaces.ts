@@ -15,6 +15,10 @@ export interface IConverter<TFrom, TTo> {
   convertBack(to: TTo): TFrom;
 }
 
+export interface IDictionary<T> {
+  [key: string]: T;
+}
+
 /**
  * Javascript exception.
  */
