@@ -4,7 +4,7 @@ const path = require("path");
 const entry = {
   tcl: "./src/index.ts"
 };
-const outdir = "./dist";
+const outdir = "./lib";
 
 // Module
 module.exports = {
