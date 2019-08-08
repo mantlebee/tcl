@@ -6,7 +6,8 @@
   "types": "dist/index.t.ts",
   "files": [
     "docs/**/*",
-    "dist/**/*"
+    "dist/**/*",
+    "index.js"
   ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
