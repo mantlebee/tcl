@@ -15,6 +15,9 @@ export interface IConverter<TFrom, TTo> {
   convertBack(to: TTo): TFrom;
 }
 
+/**
+ * Generic dictionary, the key is always a string
+ */
 export interface IDictionary<T> {
   [key: string]: T;
 }
