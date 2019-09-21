@@ -1,4 +1,4 @@
-/** @module @vesenda/tcl */
+/** @module @mantlebee/tcl */
 
 /**
  * Create a new instance of an object.
@@ -13,6 +13,14 @@ export interface IBuilder<T> {
 export interface IConverter<TFrom, TTo> {
   convert(from: TFrom): TTo;
   convertBack(to: TTo): TFrom;
+}
+
+/**
+ * Invoke an action, if allowed to do it
+ */
+export interface ICommand<T> {
+  canExecute(arg: T): boolean;
+  execute(arg: T): void;
 }
 
 /**

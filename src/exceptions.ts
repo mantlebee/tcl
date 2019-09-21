@@ -1,11 +1,16 @@
+/** @module @mantlebee/tcl */
 import { Exception } from "./types";
 
-export const NotImplementedException: Exception = message => ({
-  message,
-  name: "Not implemented."
-});
+export function createException(name: string): Exception {
+  return (message?: string) => name;
+}
 
-export const NotExpectedCaseException: Exception = message => ({
-  message,
-  name: "Not expected Ccse."
-});
+export const NotExpectedCaseException: Exception = createException(
+  "Unexpected Case."
+);
+export const NotImplementedException: Exception = createException(
+  "Not implemented."
+);
+export const SingletonInstantiationException: Exception = createException(
+  "Singleton instantiation, use the static instance property instead."
+);
